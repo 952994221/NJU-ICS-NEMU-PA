@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PA2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<script type="text/javascript" src="file:\\\D:\R_language\RstudioInstall\RStudio\resources\mathjax-26\MathJax.js?config=TeX-MML-AM_CHTML-full"></script>
+
+</head>
+<body>
+<img src="figs/trm.jpg" width=100% />
+<h1><center><font color=#2F5496 face="宋体" size="7"> <strong>计算机原理PA2 —— 图灵机之上</strong> </font></center></h1>
+<p><font face="宋体" size="4">PA1中我们已经对NEMU项目的源码进行了仔细阅读，并且实现了简易的监视器组件。然而正如我们在PA1中所述，当前的NEMU还不是完整的计算机系统，因为<code>cpu</code>可执行的指令有限。在PA2中，我们将完善这一缺陷。</br></p>
+<p><font face="宋体" size="4">之前我们提到，图灵机模型就是通过<code>pc</code>取得一串指令，然后执行指令，并更新<code>pc</code>的迭代过程。即：</p>
+<pre><code>while(state == good_state){
+    instr = instr_fetch(pc); // fetch one instruction
+    execute_instr(instr); // execute one instruction
+    state = update_state(state, ...);
+    monitor(state); // make sure system is working properly
+    update_pc();
+}
+</code></pre>
+
+<p>在NEMU中，我们引入了存储程序：即将程序完整的存储在内存中，只需要通过<code>pc</code>读取二进制执行文件执行即可运行程序。在此基础上，如果能再加入<code>IO</code>等功能，NEMU就可以成为冯诺依曼计算机了。在PA2中，由于时间关系，我们未将<code>IO</code>交互的实现纳入其中。因此本次PA后，NEMU实际上是：图灵机之上，冯诺依曼计算机之下。</p>
+<p><font face="宋体" size="4">由于计算机硬件的设计，计算机只能看懂<code>01</code>序列构成的位串(高低电位)，无法读懂汇编语言或其他高级语言。对计算机来说，运行一个程序需要读入一串二进制串表示的指令，然后通过<strong>查询</strong>，获取指令的功能及操作数，然后执行指令并修改计算机状态。对程序设计者来说，运行一个程序需要使用高级语言写入一段程序，然后借助<strong>编译器</strong>将程序转成二进制串，供计算机执行。这两个过程的交互由一套共同的“密码本”决定。计算机通过“密码本”对指令进行译码，编译器通过“密码本”对程序进行“加密”。</p>
+<p><font face="宋体" size="4">NEMU中已经自带了编译器，因此为了在NEMU中可以运行客户程序。我们只需要在计算机的角度，实现译码和执行的过程。</p>
+<p><font face="宋体" size="4"><code>CPU</code>执行指令的过程，一般可视为取指——译码——执行三个过程(在<code>mips32</code>中分为更精细的五个周期：IF-ID-EX-MEM-WB)。PA2就是基于<code>x86</code>指令集架构，实现译码和执行两个过程。 在PA2中，你可能一开始无法下手写代码，这表示你需要阅读一定量的技术文献才能写出可执行和正确的代码。</p>
+<p><font face="宋体" size="4">本次PA2下主要分为以下内容：</p>
+<blockquote>
+<ul>
+<li><a href="#preparation">前置准备</a></li>
+<li><a href="#references">参考资料</a></li>
+<li>
+<a href="#x86_instr">x86指令简要介绍</a> 
+<ul>
+<li><a href="#instr_formalism">指令形式</a></li>
+<li><a href="#ModR/M">ModR/M字节介绍</a></li>
+<li><a href="#SIB">SIB字节介绍</a></li>
+<li><a href="#opcode_byte">操作码长度说明</a></li>
+<li><a href="#instr_intro">阅读i386指令说明</a></li>
+</ul>
+</li>
+<li>
+<a href="#instr">取指——译码——执行-更新pc</a>
+<ul>
+<li><a href="#instr_fetch">取指(IF)</a></li>
+<li><a href="#instr_decode">译码(ID)</a></li>
+<li><a href="#instr_execute">执行(EX)</a> </li>
+<li><a href="#update_pc">更新pc</a></li>
+<li><a href="#append">译码补充说明</a></li>
+</ul>
+</li>
+<li><a href="#rtl">添加新指令</a></li>
+<li><a href="#dummy">在NEMU中执行客户程序</a></li>
+<li><a href="#homework">PA2要求</a></li>
+<li><a href="#file-handin">提交文件</a></li>
+</ul>
+</blockquote>
+<div id="preparation"></div>
+<h2></h2>
+<h2><font color=#2F5496 face="宋体" size="6"><strong>前置准备</strong> </font></h2>
+<p><font face="宋体" size="4" color="black">正式开始本次PA1之前，请大家先按照以下命令做好git项目的分支管理</p>
+<pre><code>cd ~/ics2020 ## 进入ics项目
+git commit --allow-empty -am &quot;before starting pa2&quot; ## commit
+git checkout master ## 切换到主分支
+git merge pa1  ## 将pa1合并到主分支
+git checkout -b pa2 ## 新建并切换到pa2分支
+git branch ## 确保当前位于pa2分支
+</code></pre>
+
+<div id="references"></div>
+<h2></h2>
+<h2><font color=#2F5496 face="宋体" size="6"><strong>参考资料</strong> </font></h2>
+<p>为了顺利完成PA2的内容，我们首先给出以下参考资料：</p>
+<blockquote>
+<ul>
+<li>南大NJU gitbook：<a href="https://nju-projectn.github.io/ics-pa-gitbook/ics2019/2.1.html">链接</a></u></li>
+<li>x86指令集介绍：<a href="https://nju-projectn.github.io/ics-pa-gitbook/ics2019/i386-intro.html">链接</a></li>
+<li>x86指令执行介绍：<a href="https://nju-projectn.github.io/ics-pa-gitbook/ics2019/exec.html">链接</a></li>
+<li>x86指令解读(强烈推荐):<a href="https://blog.csdn.net/aap159951/article/details/48706575">链接</a></li>
+<li>i386(Intel 80386)手册(chap17, Appendix) <font color="Sienna"><strong>非常重要</strong></font></li>
+<li>i386(Intel 80386)手册指令编码查询网站：<a href="http://ref.x86asm.net/coder32.html">链接</a></li>
+</ul>
+</blockquote>
+<div id="x86_instr"></div>
+<h2></h2>
+<h2><font color=#2F5496 face="宋体" size="6"><strong>x86指令简要介绍</strong> </font></h2>
+<p>在介绍指令编码之前，先看一看我们熟悉的汇编语言。比如下面这条指令：</p>
+<pre><code>movl %edi, %eax (AT&amp;T格式，R[%eax]=R[%edi])
+</code></pre>
+
+<p>实际构成一条指令的要素主要包括两方面：指令功能(如<code>mov</code>)，指令操作数。给定了指令的具体功能和操作数之后，计算机才能完成指令的具体功能。在指令编码中，指令功能使用操作码(<code>opcode</code>进行编码)，在操作码后，对操作数进行编码。比如上面的指令在<code>x86</code>中，编码为：</p>
+<pre><code>89(mov) 11(mod) 000(%eax) 111(%edi) ==&gt; 89 C7
+</code></pre>
+
+<p>即<code>89 C7</code>编码了<code>movl %edi, %eax</code>这条指令。其中<code>89</code>为指令的<code>opcode</code>，表明指令功能是<code>mov</code>。<code>C7=1100 0111</code>中包含了指令寻址方式和操作数，其高位两位<code>11</code>，表明<code>mov</code>是由寄存器到寄存器，后三位<code>000</code>编码了寄存器<code>%eax</code>，最后三位<code>111</code>编码了寄存器<code>%edi</code>。指令解读将在后面详细介绍。</p>
+<p>由于<code>x86</code>指令集架构属于复杂指令集架构的一种，因此其指令长度不固定，并且指令数目繁多，是本次PA要理解的重点和难点。</p>
+<h2></h2>
+<div id="instr_formalism"></div>
+<h3><font color=#2F5496 face="宋体" size="5"><strong>指令形式</strong> </font></h3>
+<hr />
+<p><code>x86</code>指令长度不固定，形式复杂。其一般形式如下所示(详细介绍见i386手册17.2节)：</p>
+<pre><code>+-----------+-----------+-----------+--------+------+------+------+------------+-----------+
+|instruction| address-  |  operand- |segment |opcode|ModR/M| SIB  |displacement| immediate |
+|  prefix   |size prefix|size prefix|override|      |      |      |            |           |
+|-----------+-----------+-----------+--------+------+------+------+------------+-----------|
+|   0 OR 1  |  0 OR 1   |   0 OR 1  | 0 OR 1 |1 OR 2|0 OR 1|0 OR 1| 0,1,2 OR 4 |0,1,2 OR 4 |
+| - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -|
+|                                     number of bytes                                      |
++------------------------------------------------------------------------------------------+
+</code></pre>
+
+<p>其中：</p>
+<ul>
+<li>指令前缀(prefix)可能不出现，一般占一个字节</li>
+<li>操作码必定出现，指定了指令的功能</li>
+<li>ModR/M指定了寻址方式(ModR/M, mod表示模式，R表示<code>register</code>，M表示<code>memory</code>)</li>
+<li>SIB字节在ModR/M字节后，给出具体寻址方式，是否存在由ModR/M指定</li>
+<li>displacement字节给出寻址偏移量</li>
+<li>immediate字节给出立即数</li>
+</ul>
+<p>除了<code>opcode</code>(操作码)必定出现之外, 其余组成部分可能不出现, 而对于某些组成部分, 其长度并不是固定的。但给定一条具体指令的二进制形式, 其组成部分的划分是有办法确定的, 不会产生歧义(即把一串比特串看成指令的时候, 不会出现两种不同的解释)。例如对于以下指令:</p>
+<pre><code>100017:    66 c7 84 99 00 e0 ff ff 01 00      movw   $0x1,-0x2000(%ecx,%ebx,4)
+</code></pre>
+
+<p>其组成部分的划分如下:</p>
+<pre><code>+-----------+-----------+-----------+--------+------+------+------+------------+-----------+
+|instruction| address-  |  operand- |segment |opcode|ModR/M| SIB  |displacement| immediate |
+|  prefix   |size prefix|size prefix|override|      |      |      |            |           |
+|-----------+-----------+-----------+--------+------+------+------+------------+-----------|
+|                            66                 c7     84     99    00 e0 ff ff    01 00   |
++------------------------------------------------------------------------------------------+
+</code></pre>
+
+<p>凭什么<code>0x84</code>要被解释成ModR/M字节呢? 这是由<code>opcode</code>决定的, <code>opcode</code>决定了这是什么指令的什么形式, 同时也决定了<code>opcode</code>之后的比特串如何解释。如果你要问是谁来决定<code>opcode</code>, 那你就得去问Intel了。</p>
+<p>PA中的x86经过简化, address-size prefix和segment override prefix都不会用到, 因此NEMU也不需要实现这两者的功能。</p>
+<h2></h2>
+<div id="ModR/M"></div>
+<h3><font color=#2F5496 face="宋体" size="5"><strong>ModR/M字节介绍</strong> </font></h3>
+<hr />
+<p>ModR/M字节指定了指令寻址方式。ModR/M字节分为三部分(<code>mod</code>, <code>reg/opcode</code>, <code>r/m</code>)，如下所示：</p>
+<pre><code>ModR/M byte
+7    6    5    4    3    2    1    0
++--------+-------------+-------------+
+|  mod   | reg/opcode  |     r/m     |
++--------+-------------+-------------+ 
+</code></pre>
+
+<p>其中<code>mod</code>指定了访问对象是寄存器还是内存，只有当<code>mod=0b11</code>时，访问对象才为寄存器，此时<code>r/m</code>三位表示寄存器编码。当<code>mod=0b00, 0b01, 0b10</code>时，访问对象为内存,对应三种寻址模式。此时<code>r/m</code>三位表示特定寻址方式。因此一共有<code>3中寻址模式*8种寻址方式=24种寻址</code>。而<code>reg/opcode</code>有两种情况：一是表示寄存器；而是表示操作码的延伸。 如下图所示：</p>
+<p><center><img src="figs/ModRM.png" width=50% /></center></p>
+<p>上图中上方代表寄存器编号。下方ModR/M字节的<code>mod</code>域(filed)取<code>0b00</code>时，表示寄存器寻址，类似于<code>(%reg)</code>；为<code>0b01</code>，表示(基址+偏移量寻址)，类似于<code>disp8(%reg)</code>的形式。ModR/M还指定了SIB字节是否存在。如上图中<code>r/m</code>取<code>0b100</code>时，<code>[--] [--]</code>表明需要通过SIB字节进行寻址。</p>
+<h2></h2>
+<div id="SIB"></div>
+<h3><font color=#2F5496 face="宋体" size="5"><strong>SIB字节介绍</strong> </font></h3>
+<hr />
+<p>SIB(Scale-Index-Base byte)字节，也包含三个域：<code>ss</code>, <code>index</code>, <code>base</code>。其划分如下所示：</p>
+<pre><code>SIB (scale index base) byte
+7    6    5    4    3    2    1    0
++--------+-------------+-------------+
+|   ss   |    index    |    base     |
++--------+-------------+-------------+
+</code></pre>
+
+<p>含有SIB字节表示寻址方式为比例变址寻址。其中<code>ss</code>域指定了<code>scale</code>，<code>index</code>域指定了索引寄存器，<code>base</code>域指定了基址寄存器。其一般形式为<code>M[R[base]+R[index]*scale+disp]</code>。比如指令<code>movl (%eax, %ecx, 2), %esi</code>, 其中<code>opcode</code>为<code>8B</code>，寻址方式为比例变址寻址，因此需要ModR/M和SIB字节，寻址中没有偏移量，因此ModR/M字节的<code>mod</code>域为<code>0b00</code>，<code>reg/opcode</code>域编码了寄存器<code>%esi</code>，为<code>0b110</code>，<code>r/m</code>域为<code>0b100</code>。因此ModR/M字节为<code>0b00110100=0x34</code>。SIB字节中，<code>scale</code>为2，因此<code>ss</code>域为<code>0b10</code>；索引寄存器为<code>%ecx</code>，<code>index</code>域为<code>0b001</code>；基址寄存器为<code>%eax</code>，因此<code>base</code>域为<code>0b000</code>。得到SIB字节为<code>0b10001000=0x88</code>。因此<code>movl (%eax, %ecx, 2), %esi</code>指令编码如下：</p>
+<pre><code>8B 34 88     movl (%eax, %ecx, 2), %esi ## AT&amp;T
+</code></pre>
+
+<p><font color=Sienna><strong>思考</strong>: 指令<code>movl -0x8(, %eax, 2), %ebx ## AT&amp;T</code>的编码应该是怎样的，请将其写在本次的报告中。</font></p>
+<h2></h2>
+<div id="opcode_byte"></div>
+<h3><font color=#2F5496 face="宋体" size="5"><strong>操作码长度介绍</strong> </font></h3>
+<hr />
+<p>由于<code>x86</code>指令集架构属于复杂指令集架构。如果操作码仅仅用一个字节进行编码，指令数目为256，无法满足需求。因此操作码还需要进行扩充。</p>
+<p><code>x86</code>使用两种方法扩充操作码：</p>
+<ul>
+<li>一是使用转义码(escape code)，<code>x86</code>中有一个2字节转义码<code>0x0f</code>, 当指令<code>opcode</code>的第一个字节是<code>0x0f</code>时, 表示需要再读入一个字节才能决定具体的指令形式(部分条件跳转指令就属于这种情况)。后来随着各种SSE指令集的加入, 使用2字节转义码也不足以表示所有的指令形式了, <code>x86</code>在2字节转义码的基础上又引入了3字节转义码, 当指令<code>opcode</code>的前两个字节是<code>0x0f</code>和<code>0x38</code>时,表示需要再读入一个字节才能决定具体的指令形式。</li>
+<li>二是用ModR/M字节的<code>reg/opcode</code>域扩充。有些时候, 读入一个字节也还不能完全确定具体的指令形式, 这时候需要读入紧跟在<code>opcode</code>后面的ModR/M字节, 把其中的<code>reg/opcode</code>域当做<code>opcode</code>的一部分来解释, 才能决定具体的指令形式。<code>x86</code>把这些指令划分成不同的指令组(instruction group), 在同一个指令组中的指令需要通过ModR/M字节中的扩展<code>opcode</code>域来区分。</li>
+</ul>
+<h2></h2>
+<div id="instr_intro"></div>
+<h3><font color=#2F5496 face="宋体" size="5"><strong>阅读i386指令说明</strong> </font></h3>
+<hr />
+<p>阅读i386指令，主要通过阅读i386手册17章的指令说明及附录1的指令编码表进行理解。以熟悉的<code>mov</code>指令为例，首先在手册第345页查得<code>mov</code>指令说明如下图：</p>
+<p><center><img src="figs/mov.png" width=60%></center></p>
+<p>首先注意i386手册的指令是按照<strong>Intel</strong>格式，而不是AT&amp;T格式。因此<code>dest</code>目的操作数在前，<code>src</code>源操作数在后。</p>
+<p>上图中操作码为<code>8B</code>的已经在上面介绍过了(<code>8A</code>类似)，下面分组介绍其他指令。</p>
+<p>首先对上图表做一些说明。</p>
+<p>第一列<code>opcode</code>表示操作码，紧跟操作码的符号<code>/r, +rb, +rw</code>等属于操作码的补充说明，在手册246-248页有详细说明。其中<code>/r</code>表示ModR/M字节的<code>reg/opcode</code>域表示寄存器而不是操作码的延伸。<code>+rb, +rw</code>表示将目的寄存器编码嵌入操作码后三个字节，形成新的操作码。</p>
+<p>第二列<code>instruction</code>表示遵循Intel格式的指令内容。其中<code>r/m</code>表示寄存器或内存，<code>r8</code>表示单字节寄存器，<code>r/m8</code>表示单字节的寄存器或者内存。</p>
+<p>第四列<code>Description</code>是指令的文字说明。</p>
+<p><strong>mov r/m, r</strong></p>
+<p>这类指令是将寄存器内容转移到寄存器或内存中。包括操作码为<code>89, 88</code>三行内容。与操作码<code>8B</code>的指令类似，不再赘述。</p>
+<p>比如<code>8B 34 88</code>编码了指令<code>movl (%eax, %ecx, 2), %esi  ## AT&amp;T</code>，修改操作码为<code>89</code>，即可编码指令
+<code>movl %esi, (%eax, %ecx, 2) ## AT&amp;T</code>为<code>89 34 88</code>。</p>
+<p><strong>mov r/m16, Sreg 和 mov Sreg, r/m16</strong></p>
+<p>其中<code>Sreg</code>表示段寄存器，PA中不需要实现，不再赘述。</p>
+<p><strong>opcode 为A0, A1, A2, A3</strong></p>
+<p>其中<code>moffs</code>用来表示段内偏移量, 但PA中的x86没有&quot;段&quot;的概念, 目前可以理解成&quot;相对于物理地址0处的偏移量&quot;。这6种形式是mov指令的特殊形式, 它们可以不通过ModR/M字节, 让<code>displacement</code>直接跟在<code>opcode</code>后面, 同时让<code>displacement</code>来指示一个内存地址。</p>
+<p><strong>操作码为B0, B8</strong></p>
+<p>这类<code>mov</code>指令表示将立即数转移到寄存器中。注意<code>+rb +rw +rd</code>指定了操作数宽度，<code>b, w, d</code>分别表述字节，字和双字。<code>+</code>表示目的寄存器嵌入到了操作码中。比如下面的汇编指令：</p>
+<pre><code>movl $0x8, %ecx  ## AT&amp;T格式
+</code></pre>
+
+<p>对应操作码为<code>B8+rd</code>，<code>B8表示为0b10111000</code>，寄存器<code>%ecx</code>编码为<code>0b001</code>，因此合成的操作码为<code>0b10111001</code>，原操作码<code>B8</code>后三位变为目的寄存器的编码。因此整条指令被编码为：</p>
+<pre><code>B9 00 10 00 00    movl $0x8, %ecx ## 注意操作码后面跟立即数，是小端表示
+</code></pre>
+
+<p>为更进一步了解此指令，你还可以查阅i386手册附录1的操作码表格，找到<code>B9</code>这一栏。 如下图所示：</p>
+<p><center><img src="figs/movl_b9.jpg" width=70%></center></p>
+<p>操作码<code>B9</code>表示将立即数转移到寄存器<code>%ecx</code>。与上面的结果一致。</p>
+<p>要看懂附录1的操作码表格，你需要仔细阅读手册413页的符号说明，比如<code>G, I, E, J, r</code>等。</p>
+<div id="instr"></div>
+<h2></h2>
+<h2><font color=#2F5496 face="宋体" size="6"><strong>取指——译码——执行-更新pc</strong> </font></h2>
+<p>上面我们提到，<code>cpu</code>执行指令需要经过取指(IF)——译码(ID)——执行(EX)三个大致过程。前面我们提到<code>cpu</code>执行一条指令是通过调用<code>exec_once()</code>函数(定义在<code>nemu/src/cpu/cpu.c</code>中)，而<code>exec_once()</code>函数调用了<code>isa_exec()</code>函数(定义在<code>nemu/src/isa/x86/exec/exec.c</code>)中，<code>isa_exec()</code>函数又调用了<code>idex()</code>函数(定义在<code>nemu/include/cpu/exec.h</code>中)。这里我们复制<code>isa_exec()</code>和<code>idex()</code>函数内容如下：</p>
+<pre><code>void isa_exec(vaddr_t *pc) { // in nemu/src/isa/x86/exec/exec.h
+  uint32_t opcode = instr_fetch(pc, 1);
+  decinfo.opcode = opcode;
+  set_width(opcode_table[opcode].width);
+  idex(pc, &amp;opcode_table[opcode]);
+}
+
+static inline void idex(vaddr_t *pc, OpcodeEntry *e) { // in nemu/include/cpu/exec.h
+  if (e-&gt;decode)
+    e-&gt;decode(pc);
+  e-&gt;execute(pc);
+}
+</code></pre>
+
+<p>可以看出<code>isa_exec()</code>函数负责取得指令，并根据操作码表设定操作数宽度，然后交由<code>idex</code>完成译码和执行。(idex其实就是id(instruction decode)和ex(execute)的组合)。</p>
+<p>此节我们将对这三个过程进行详细介绍，最后介绍NEMU中怎么更新<code>pc</code>。</p>
+<h2></h2>
+<div id="instr_fetch"></div>
+<h3><font color=#2F5496 face="宋体" size="5"><strong>取指(IF)</strong> </font></h3>
+<hr />
+<p><font face="宋体" size="4" color="black">我们知道，<code>pc</code>表示的当前指令的地址，取指令实际上就是一次内存的访问：<code>instr = mem[pc]</code>。实际上，根据<code>pc</code>取指令还需要考虑指令长度这一因素。缺乏指令长度则无法对指令进行正确译码。此外在更新<code>pc</code>时，由于错误的指令长度，导致下一次取得错误的指令，要么取得非法指令，要么取得可执行指令，都会改变程序的正常运行状态。</p>
+<p>提及指令及指令长度，不得不涉及基于两种指令集架构的计算机：RISC(Reduced Instruction-Set Computer，精简指令集计算机)和CISC(Complex Instruction-Set Computer，复杂指令集计算机)。这两种指令集架构计算机的出现是对指令<code>CPI</code>和指令集功能的不同折衷结果。以<code>mips32</code>为代表的RISC指令集架构计算机，指令数目更少，指令长度固定，指令<code>CPI</code>更小；而以<code>x86</code>为代表的CISC指令集架构计算机，指令数目更多，功能更多，但同时指令长度不固定并且指令<code>CPI</code>更大。</p>
+<p><font face="宋体" size="4" color="black">在PA中，我们选取的指令集架构为<code>x86</code>，这表示PA2中我们将不得不面对长度不固定，功能复杂的一系列指令。因此对i386第17章及附录部分的阅读理解非常重要。</p>
+<p><font face="宋体" size="4" color="black">由于取指只是一次内存的访问，NEMU通过<code>instr_fetch</code>函数(<code>nemu/include/cpu/exec.h</code>)，<code>instr_fetch()</code>通过<code>pc</code>和传递的指令长度对内存进行访问，返回一条指令。</p>
+<h2></h2>
+<div id="instr_decode"></div>
+<h3><font color=#2F5496 face="宋体" size="5"><strong>译码(ID)</strong> </font></h3>
+<hr />
+<p><font face="宋体" size="4" color="black">译码的目的是得到指令的操作和操作对象, 这主要是通过查看指令的<code>opcode</code>(操作码)来决定的。不同<code>ISA</code>的<code>opcode</code>会出现在指令的不同位置, 我们只需要根据指令的编码格式, 从取出的指令中抽取出相应的<code>opcode</code>即可。</p>
+<p>取出<code>opcode</code>之后, 框架代码用它来对<code>opcode_table</code>数组进行索引, 取出其中的一个<code>OpcodeEntry</code>类型(定义在<code>nemu/include/cpu/exec.h</code>)的元素。<code>opcode_table</code>数组其实就是我们之前提到的“密码本”, 这一张表通过操作码<code>opcode</code>来索引, 它记录了每一个<code>opcode</code>对应指令的<strong>译码辅助函数</strong>, <strong>执行辅助函数<strong>, 以及</strong>操作数宽度</strong>。有了这些信息, 我们就可以得知指令的具体操作了, 例如对两个寄存器进行加法操作。</p>
+<p>其中<code>OpcodeEntry</code>结构体定义如下：</p>
+<pre><code>typedef struct {
+  DHelper decode;  ## 译码辅助函数
+  EHelper execute; ## 执行辅助函数
+  int width;  ## 操作数宽度
+} OpcodeEntry;
+</code></pre>
+
+<p><strong>译码辅助函数</strong></p>
+<p>为了结构化整个系统，NEMU引入了<strong>译码辅助函数</strong>来对不同类型的操作码进行译码，得到操作数，操作数宽度等一系列信息，这些信息保存在全局结构体<code>decinfo</code>(定义在<code>nemu/include/cpu/decode.h</code>)中。</p>
+<p>译码辅助函数就是通过宏<code>make_DHelper</code>定义(宏位于<code>nemu/include/cpu/decode.h</code>)的一系列函数
+，具体形式如下：</p>
+<pre><code>#define make_DHelper(name) void concat(decode_, name) (vaddr_t *pc)
+</code></pre>
+
+<p>根据不同操作码的功能，对应不同的<code>name</code>，比如跳转<code>J</code>，寄存器<code>r</code>，因此对应了不同译码辅助函数<code>decode_J</code>，<code>decode_r</code>。其中<code>name</code>需要根据i386手册附录1操作码表格对应操作码功能进行查找。在<code>nemu/src/isa/x86/decode/decode.c</code>定义了一系列译码辅助函数，可供完成PA2过程中参考。</p>
+<p>由于译码辅助函数根据不同指令的<code>name</code>需要得到不同操作数，而很多时候不同指令的操作数是“相同”的。比如<code>add %eax, %ecx</code>和<code>test %eax, %eax</code>。这表示如果一种类型的操作码附带一种译码辅助函数，会造成大量重复的代码段。因此NEMU框架中额外定义了<strong>操作数译码辅助函数</strong>，根据操作数类型进行辅助译码。由此上面<code>add %eax, %ecx</code>和<code>test %eax, %eax</code>只需要调用同种操作数译码辅助函数即可。因为操作数类型都是寄存器。具体地，操作数译码辅助函数与译码辅助函数类似，都是通过宏定义的一系列函数：</p>
+<pre><code>// nemu/src/isa/x86/decode/decode.c
+#define make_DopHelper(name) void concat(decode_op_, name) (vaddr_t *pc, Operand *op, bool load_val)
+</code></pre>
+
+<p>框架代码已经实现了一些列译码辅助函数和操作数译码辅助函数，你可以通过阅读<code>nemu/src/isa/x86/decode/decode.c</code>文件体会将指令译码和操作数译码分开的好处。</p>
+<p>如上所述，译码辅助函数处理指令，将信息保存在结构体<code>decinfo</code>中。<code>decinfo</code>(定义在<code>nemu/include/cpu/decode.h</code>中)结构体如下：</p>
+<pre><code>typedef struct {
+  uint32_t opcode;  ## 操作码
+  uint32_t width;   ## 操作数宽度
+  vaddr_t seq_pc;  ## 序列化pc，指向序列下一条指令，而不是跳转指令
+  bool is_jmp;  ## 是否跳转
+  vaddr_t jmp_pc; ## 跳转的pc地址
+  Operand src, dest, src2; ## 源操作数和目的操作数
+  struct ISADecodeInfo isa; ## 与ISA有关的译码信息
+} DecodeInfo;
+</code></pre>
+
+<p>译码信息包含了操作码、操作数宽度、序列化<code>pc</code>，是否跳转及跳转地址、源操作数和目的操作数、与ISA有关的指令。其中序列化<code>pc</code>指的是当前指令的下一条指令。如下所示：</p>
+<pre><code>    0x100000: movl %eax, %ecx
+pc-&gt;0x100003: call 0x10002e&lt;main&gt;
+    0x100005: addl $4, $edi
+</code></pre>
+
+<p>当前<code>pc</code>位于<code>0x100003</code>时，<code>seq_pc</code>指向下一条指令地址<code>0x100005</code>而不是<code>0x10002e</code>。它指向下一条静态指令。</p>
+<p>结构体<code>ISADecodeInfo</code>定义在<code>nemu/src/isa/x86/include/isa/decode.h</code>中。</p>
+<p><strong>操作数及操作数宽度</strong></p>
+<p>如全局译码信息<code>decinfo</code>被保存为结构体，操作数也被封装为一个结构体<code>Operand</code>(定义在<code>nemu/include/cpu/decode.h</code>中)。具体信息如下：</p>
+<pre><code>typedef struct {
+  uint32_t type; ## 类型
+  int width; ## 宽度
+  union {
+    uint32_t reg; ## 寄存器
+    rtlreg_t addr; ## 地址
+    uint32_t imm; ## 立即数
+    int32_t simm; ## 符号扩展立即数
+  };
+  rtlreg_t val;
+  char str[OP_STR_SIZE];
+} Operand;
+</code></pre>
+
+<p>NEMU中获取指令的操作数宽度流程如下： 首先通过查询<code>opcode_table</code>中记录的操作数宽度; <strong>若这一操作数宽度结果为0, 表示仅仅根据操作码来判断, 操作数宽度还不能确定, 可能是16位或者32位</strong>, 需要通过<code>decinfo.isa.is_operand_size_16</code>成员变量来决定。这其实实现了&quot;操作数宽度前缀&quot;的相关功能。整个过程由<code>set_width()</code>函数完成(定义在<code>nemu/src/isa/x86/exec/exec.c</code>中)。 这里简要对“操作数宽度前缀做说明”，我们知道<code>x86</code>指令编码操作码前面可以包含操作码前缀。当操作码前缀为<code>0x66</code>，表示操作数宽度被定义为16位，当操作码前缀为<code>0x67</code>时，表示地址宽度为16位。</p>
+<h2></h2>
+<div id="instr_execute"></div>
+<h3><font color=#2F5496 face="宋体" size="5"><strong>执行(EX)</strong> </font></h3>
+<hr />
+<p>当译码辅助函数将译码信息写入<code>decinfo</code>结构体后，将调用执行辅助函数执行指令。执行辅助函数也是用<code>make_EHelper</code>宏(定义在<code>nemu/include/cpu/exec.h</code>)定义的一系列函数:</p>
+<pre><code>#define make_EHelper(name) void concat(exec_, name) (vaddr_t *pc)
+</code></pre>
+
+<p>不同功能的指令对应的执行辅助函数通过<code>name</code>进行区分，<code>name</code>是指令操作本身。比如<code>exec_mov</code>表示<code>mov</code>，而<code>exec_add</code>表示<code>add</code>。你可以在<code>nemu/src/isa/x86/include/exec/all-instr.h</code>中查看一些已经定义好的执行辅助函数。</p>
+<p>执行辅助函数通过RTL指令来描述指令真正的执行功能(RTL指令将在下文介绍)。</p>
+<p>特别地, 对于x86来说, 大部分计算指令都可以访问内存, 于是框架代码提供了<code>operand_write()</code>函数(在<code>nemu/src/isa/x86/decode/decode.c</code>中定义), 来根据目的操作数类型的不同, 决定是写入寄存器还是写入内存。</p>
+<h2></h2>
+<div id="update_pc"></div>
+<h3><font color=#2F5496 face="宋体" size="5"><strong>更新pc</strong> </font></h3>
+<hr />
+<p>为了更新<code>pc</code>, 我们需要确定刚刚执行完的指令的长度。事实上, 在<code>instr_fetch()</code>中, 每次取指都会更新它的<code>pc</code>参数, 而这个参数就是在<code>exec_once()</code>调用<code>isa_exec()</code>时传入的<code>decinfo.seq_pc</code>。在<code>isa_exec()</code>执行的过程中, <code>decinfo.seq_pc</code>将会随着取出的指令长度而增长. 因此当代码从<code>isa_exec()</code>返回时, <code>decinfo.seq_pc</code>将会指向下一条静态指令的地址, 此时通过<code>update_pc()</code>(在<code>nemu/include/cpu/exec.h</code>中定义)对<code>pc</code>进行更新即可。</p>
+<h2></h2>
+<div id="append"></div>
+<h3><font color=#2F5496 face="宋体" size="5"><strong>译码补充说明</strong> </font></h3>
+<hr />
+<p>前面我们提到了，为了扩充指令功能，指令的长度可能是多个字节，或者由ModR/M的<code>reg/opcode</code>域扩充而来。译码的时候怎么进行区分呢？</p>
+<p>事实上，我们已经有了一张译码表<code>opcode_table</code>，而多字节操作码包含前导的转义码(escape code)，因此遇到<code>instr_fetch</code>得到的操作码是前导转义码时，只需要额外定义一个辅助函数告诉系统，还需要再读入一个字节即可。这个函数为<code>exec_2byte_esc</code>，定义在<code>nemu/src/isa/x86/exec/exec.c</code>中。你可以阅读这个函数的内容，理解NEMU怎么处理两个字节的操作码。</p>
+<p>而对于ModR/M的<code>reg/opcode</code>域作为操作码延伸的情况，在i386手册的操作码说明中，用<code>/digit</code>表示。其中<code>digit数值为0-7</code>。这类操作码被组成一组指令组(<code>nemu/src/isa/x86/exec/exec.c</code>中<code>make_group</code>)，需要通过<code>reg/opcode</code>告诉执行辅助函数指令的具体功能。如i386手册中下图：</p>
+<p><center><img src="figs/grp.png" width=50%></center></p>
+<p>第一组指令包含了(<code>add</code>, <code>or</code>, <code>adc</code>, <code>sbb</code>, <code>and</code>, <code>xor</code>, <code>cmp</code>)。仅仅依靠一字节的操作码只能确定指令的功能在指令组1中，还需要通过ModR/M的<code>reg/opcode</code>域确定具体是什么功能。由于对ModR/M字节的译码已经在框架代码中完成，因此只需要完成<code>nemu/src/isa/x86/exec/exec.c</code>中<code>make_group</code>每一组各个位置对应的执行辅助函数即可。</p>
+<div id="rtl"></div>
+<h2></h2>
+<h2><font color=#2F5496 face="宋体" size="6"><strong>添加新指令</strong> </font></h2>
+<p>为了在NEMU执行客户指令，我们还需要对NEMU的<code>opcode_table</code>进行完善。<code>opcode_table</code>有一些已经填好的<code>IDEXW(DHelper, EHelper, width)</code>，你可以进行阅读并作为完善指令的参考。在介绍怎么添加新指令前，我们先介绍两部分内容：已定义的宏和寄存器传输语言(RTL)。</p>
+<p><strong>已定义的宏</strong></p>
+<p>为更高效完成PA2的要求，NEMU中定义了一系列的宏可供调用，实际操作中<code>id_src, id_src2, id_dest</code>三个宏使用频率很高：</p>
+<p><center><img src="figs/macros.png" width=75%></center></p>
+<p><strong>寄存器传输语言(RTL)</strong></p>
+<p>我们知道，NEMU是用软件模拟的一套计算机系统。因此对指令的实现也要借助于软件。比如寄存器数据的传输，内存的访问等。为方便这一系列过程，NEMU中引入了寄存器传输语言(RTL)用于实现简单指令功能。然后在执行辅助函数中，只需要调用RTL实现的指令功能函数即可。</p>
+<p>下面对NEMU中使用的RTL进行一些说明, 首先是RTL寄存器的定义。在NEMU中, RTL寄存器统一使用<code>rtlreg_t</code>来定义, 而<code>rtlreg_t</code>(在<code>nemu/include/common.h</code>中定义)其实只是一个<code>uint32_t</code>类型:</p>
+<pre><code>typedef uint32_t rtlreg_t;
+</code></pre>
+
+<p>在NEMU中, RTL寄存器只有以下这些</p>
+<ul>
+<li>不同ISA的通用寄存器(在<code>nemu/src/isa/$ISA/include/isa/reg.h</code>中定义)</li>
+<li><code>id_src</code>, <code>id_src2</code>和<code>id_dest</code>中的访存地址<code>addr</code>和操作数内容<code>val</code>(在<code>nemu/include/cpu/decode.h</code>中定义)。</li>
+<li>临时寄存器<code>s0</code>, <code>s1</code>, <code>t0</code>, <code>t1</code>和<code>ir</code>(在<code>nemu/src/cpu/cpu.c</code>中定义)</li>
+</ul>
+<p>有了RTL寄存器, 我们就可以定义RTL指令对它们进行的操作了。在NEMU中, RTL指令有两种：</p>
+<p>一种是RTL基本指令(在<code>nemu/include/rtl/rtl.h</code>中定义), 它们的特点是不需要使用临时寄存器, 可以看做是CPU执行过程中最基本的操作。不同的ISA都可以使用RTL基本指令, 因此它们属于ISA无关的代码。RTL基本指令包括(我们使用了一些简单的正则表达式记号):</p>
+<ul>
+<li>立即数读入<code>rtl_li</code></li>
+<li>寄存器传输<code>rtl_mv</code></li>
+<li>32位寄存器-寄存器类型的算术/逻辑运算, 包括<code>rtl_(add|sub|and|or|xor|shl|shr|sar|i?mul_[lo|hi]|i?div_[q|r])</code>, 这些运算的定义用到了<code>nemu/include/rtl/c_op.h</code>中的C语言运算</li>
+<li>被除数为64位的除法运算<code>rtl_i?div64_[q|r]</code></li>
+<li>guest内存访问<code>rtl_lm</code>和<code>rtl_sm</code></li>
+<li>host内存访问<code>rtl_host_lm</code>和<code>rtl_host_sm</code></li>
+<li>关系运算<code>rtl_setrelop</code>, 具体可参考<code>nemu/src/cpu/relop.c</code></li>
+<li>跳转, 包括直接跳转<code>rtl_j</code>, 间接跳转<code>rtl_jr</code>和条件跳转<code>rtl_jrelop</code></li>
+<li>终止程序<code>rtl_exit</code>(在<code>nemu/src/monitor/cpu-exec.c</code>中定义)</li>
+</ul>
+<p>在代码中使用上述函数的时候, 只需要编写<code>rtl_xxx</code>即可。</p>
+<p>第二种RTL指令是RTL伪指令, 它们是通过RTL基本指令或者已经实现的RTL伪指令来实现的. RTL伪指令又分两类, 包括:</p>
+<ul>
+<li>ISA无关的RTL伪指令(在<code>nemu/include/rtl/rtl.h</code>中定义)</li>
+<li>32位寄存器-立即数类型的算术/逻辑运算, 包括<code>rtl_(add|sub|and|or|xor|shl|shr|sar|i?mul_[lo|hi]|i?div_[q|r])_i</code></li>
+<li>其它常用功能, 如按位取反<code>rtl_not</code>, 符号扩展<code>rtl_sext</code>等</li>
+<li>ISA相关的RTL伪指令(在<code>nemu/src/isa/$ISA/include/isa/rtl.h</code>中定义)</li>
+<li>通用寄存器访问<code>rtl_lr</code>和<code>rtl_sr</code></li>
+<li>ISA相关性较强的功能(如x86的溢出和进/借位判断, EFLAGS标志位访问等)</li>
+</ul>
+<p>其中大部分RTL伪指令还没有实现, 必要的时候你需要实现它们. 有了这些RTL指令之后, 我们就可以方便地通过若干条RTL指令来实现每一条指令的行为了。</p>
+<p><strong>调用规定</strong></p>
+<ul>
+<li>实现RTL伪指令的时候, 尽可能不使用<code>dest</code>之外的寄存器存放中间结果. 由于<code>dest</code>最后会被写入新值, 其旧值肯定要被覆盖, 自然也可以安全地作为RTL伪指令的临时寄存器。</li>
+<li>
+实在需要使用临时寄存器的时候, 按照以下约定来使用:
+<ul>
+<li><code>ir</code>(immediate register) —— 只能作为<code>rtl_li</code>的目的RTL寄存器</li>
+<li><code>t0</code>, <code>t1</code> —— 只能在RTL伪指令的实现过程中存放中间结果</li>
+<li><code>s0</code>, <code>s1</code> —— 只能在译码辅助函数和执行辅助函数的实现过程中存放中间结果</li>
+</ul>
+</li>
+</ul>
+<p><font color=Sienna><strong>思考</strong>：上述将临时寄存器在不同函数中分类型使用是否有必要。如果在实现一个执行辅助函数<code>make_EHelper()</code>过程中使用了<code>t0</code>而不是<code>s0</code>存放结果，然后又调用了RTL基本指令<code>rtl_xxx</code>，而<code>rtl_xxx</code>中也使用了<code>t0</code>存放临时结果。这时候执行辅助函数执行结果还正确么？请将你的思考写在本次报告中。</font></p>
+<p><strong>添加指令</strong></p>
+<p>有了临时寄存器，RTL指令后，添加一个新指令就非常简单了：</p>
+<ol>
+<li>用RTL实现正确的执行辅助函数, 需要注意使用RTL伪指令时要遵守上文提到的调用约定</li>
+<li>用<code>make_EHelper</code>宏定义执行辅助函数<code>exec_name</code></li>
+<li>在<code>opcode_table</code>中填写正确的译码辅助函数, 执行辅助函数以及操作数宽度</li>
+</ol>
+<p>实际上，RTL指令都定义好了，只是等待你去实现。具体文件在<code>nemu/src/isa/x86/exec</code>文件夹中，比如<code>arith.c</code>定义了基本算术，<code>logic.c</code>定义了基本逻辑运算，<code>control.c</code>定义了基本控制转移。</p>
+<div id="dummy"></div>
+<h2></h2>
+<h2><font color=#2F5496 face="宋体" size="6"><strong>在NEMU中执行客户程序</strong> </font></h2>
+<p>前面PA1我们提到NEMU有一个内置的程序，如果未提供客户程序，将加载内置程序进行执行。反过来，如果我们为其提供客户程序，NEMU能否正常执行完客户程序呢？这正是本节要介绍的内容。</p>
+<p><strong>方案一： 编译+运行</strong></p>
+<p>在terminal中，输入以下命令可以运行位于<code>ics2020/nexus-am/tests/cputest/tests</code>下的c文件。</p>
+<pre><code>cd ics2020/nexus-am/tests/cputest
+make ARCH=x86-nemu ALL=$program run ## $program代表具体程序名，如ALL=dummy
+</code></pre>
+
+<p>然后NEMU就会编译<code>$program.c</code>然后运行。这种方案会导致程序一次性运行完毕，无法进行调试。因此我们准备了方案二如下：</p>
+<p><strong>编译客户程序</strong></p>
+<p>NEMU提供了一些测试函数，位于<code>ics2020/nexus-am/tests/cputest/tests</code>下。该文件夹包含了一系列C语言文件。为得到二进制执行文件，只需要在terminal中执行下面的命令</p>
+<pre><code>cd ics2020/nexus-am/tests/cputest
+make ARCH=x86-nemu  ## 指定运行时环境为基于x86指令集架构的nemu
+</code></pre>
+
+<p>然后在<code>ics2020/nexus-am/tests/cputest/build</code>下有编译好的二进制文件。</p>
+<p><strong>设置客户程序</strong></p>
+<p>PA1中我们提到，NEMU启动时，调用了<code>monitor.c</code>中的一系列初始化函数，仔细阅读<code>monitor.c</code>文件，通过修改其中<code>img_file</code>内容为编译好的二进制程序路径即可在NEMU启动的时候加载我们编译好的客户程序了。</p>
+<p><font color=Sienna><strong>思考</strong>：既然NEMU可以执行二进制程序，是否可以直接通过<code>gcc</code>将C语言文件编译后交由NEMU执行。如果可以，那么在<code>main.c</code>里调用<code>system</code>命令完成指定C语言文件编译(回想PA1下在<code>gen_expr.c</code>中编译程序)，然后将二进制文件路径传入<code>monitor.c</code>中即可实现NEMU自动化运行C文件。如下所示：</p>
+<pre><code>make ISA=nemu -f $prgram.c run  ## $program.c指定了C文件的路径
+</code></pre>
+
+<p>这不就是<code>gcc $program.c -o $program</code>和<code>./$program</code>做的事情吗。上述方案是否可行呢？请做出你的思考，并在报告中进行简要说明。</font></p>
+<p><strong>调试客户程序</strong></p>
+<p>设置好客户程序路径后，直接<code>make ISA=x86 run</code>即可启动NEMU，并且自动加载客户程序。然后用PA1下中实现的监视点即可对客户程序进行调试。如下图所示：</p>
+<p><img src="figs/exec.png" alt="exec" /></p>
+<p>如果遇到未实现的指令，NEMU也会及时抛出错误，如下图所示：</p>
+<p><img src="figs/exec_wrong.png" alt="exec_wrong" />
+图中指出了操作码为<code>0x40</code>的指令还未实现。查阅i386手册附录1得到<code>0x40</code>功能是实现自增运算。为了确认NEMU抛出错误的位置是正确的，还可以通过查看<code>nemu/nexus-am/tests/cputest/build/$program-x86-nemu.txt</code>中的反汇编代码进行对比。如下图</p>
+<p><img src="figs/check.png" alt="check" />
+依照报错的<code>pc=0x100037</code>位置，查得汇编代码为<code>inc %eax</code>，说明NEMU抛出错误的位置正确，间接反映之前的指令运行是正确的。</p>
+<div id="homework"></div>
+<h2></h2>
+<h2><font color=#2F5496 face="宋体" size="6"><strong>PA2要求</strong> </font></h2>
+<p>由于<code>nemu/nexus-am/tests/cputest/tests</code>下C语言文件太多，为减轻即将期末季大家的负担。本次PA2要求如下：</p>
+<ul>
+<li>在NEMU中正确运行<code>nemu/nexus-am/tests/cputest/tests/dummy.c</code>，为此在<code>sub</code>和<code>add</code>等指令时，你还需要额外在<code>CPU_State</code>结构体中定义一个标志寄存器，NEMU中只需要<code>CF, ZF, SF, OF, IF</code>5个标志寄存器。如果你不清楚标志寄存器内存分布，请参考i386手册第34页Eflags寄存器构造。注意在<code>sub, add</code>等指令过程中，要及时修改5个标志寄存器的值(阅读<code>nemu/src/isa/x86/include/isa/rtl.h</code>，完成与上述标志寄存器有关的函数即可)。</li>
+<li>在NEMU中正确运行<code>nemu/nexus-am/tests/cputest/tests/add.c</code></li>
+</ul>
+<p>提示:检查加法、减法是否溢出，实际上是检查符号位。以加法为例：</p>
+<pre><code>sum = x + y;
+溢出： (x&gt;0 &amp;&amp; y&gt;0 &amp;&amp; sum&lt;0) || (x&lt;0 &amp;&amp; y&lt;0 &amp;&amp; sum&gt;=0)
+这表示x与y同号而与sum异号
+因此设 tmp = (x^(~y))&amp;(x^sum)，判断tmp的符号位即可
+如果x的宽度是width个字节。实际上就是通过cpu.eflags.OF=tmp&gt;&gt;(width*8-1)完成OF标志寄存器更新
+</code></pre>
+
+<div id="file-handin"></div>
+<h2></h2>
+<h2><font color=#2F5496 face="宋体" size="6"><strong>提交文件说明</strong> </font></h2>
+<p><font face="宋体" size="4" color="black">请提交以下内容：</p>
+<blockquote>
+<ul>
+<li>nemu项目原码，压缩为zip</li>
+<li>nemu项目PA1上的git log日志，保存为txt格式</li>
+<li>一个电子版实验报告</li>
+</ul>
+</blockquote>
+<h2><font color=red>请在截止日期前上传至Elearning！</h2>
+<h1><font color="blut"><em>本学期最后一次PA：PA2此结束了，感谢大家参与！</em></h1>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
